@@ -15,21 +15,13 @@ Web Services
 
 ## REQUIREMENTS
 
-Key requires the [CTools](https://www.drupal.org/project/ctools)
+Key requires the [Plugin Manager](https://backdropcms.org/project/plugin_manager)
 module.
-
-## RECOMMENDED MODULES
-
-The following module extends Key's functionality:
-
-* **[Townsend Security Key
-Connection](https://www.drupal.org/project/townsec_key)** Allows keys
-to be stored on a designated external key management server.
 
 ## INSTALLATION
 
-Install Key using a standard method for installing a contributed Drupal
-module.
+- Install this module using the official Backdrop CMS instructions at
+  [](https://docs.backdropcms.org/documentation/extend-with-modules).
 
 ## CONFIGURATION
 
@@ -56,7 +48,7 @@ A key provider is the means by which the key value is stored and/or
 provided when needed. The following key providers are included with
 Key:
 
-* **Configuration:** Stores the key in Drupal configuration settings.
+* **Configuration:** Stores the key in Backdrop configuration settings.
 The key value can be set, edited, and viewed through the administrative
 interface, making it useful during site development. However, for
 better security on production websites, keys should not be stored in
@@ -71,7 +63,7 @@ secure than storing it in the database.
 Both the Configuration and File provider plugins support storing the
 key with Base64 encoding.
 
-Key providers are CTools plugins, so new providers can be defined
+Key providers are Plugin Manager plugins, so new providers can be defined
 easily.
 
 ### Key input
@@ -104,7 +96,7 @@ choose one. This could appear, for instance, on the integrating
 module's configuration page.
 
 Modules can add a key field to a form using the key_select API element,
-which behaves like a select element, but is populated with available 
+which behaves like a select element, but is populated with available
 keys as options.
 
 ```
@@ -116,22 +108,22 @@ $form['secret_key'] = array(
 
 There are a couple of additional properties that can be used:
 
-* `#key_filters` An array of filters to apply to the list of keys. 
+* `#key_filters` An array of filters to apply to the list of keys.
 Currently, filtering is quite basic, though it will be improved. You can
 filter on key type and/or key provider. Examples:
-  * `#key_filters = ['type' => 'mailchimp']` This would only display 
+  * `#key_filters = ['type' => 'mailchimp']` This would only display
     MailChimp keys.
-  * `#key_filters = ['provider' => 'file']` This would only display keys 
+  * `#key_filters = ['provider' => 'file']` This would only display keys
     that use the File key provider.
   * `#key_filters = ['type' => 'mailchimp', 'provider' => 'file']`
     This would only display MailChimp keys that use the File key provider.
 * `#key_description` This is a boolean value that determines if information
   about keys is added to the element's description. It is TRUE by default
-  and it prepends the description with the following text (with a link to 
+  and it prepends the description with the following text (with a link to
   the add key form), which can be disabled by setting #key_description to 
   FALSE:
 
-  > Choose an available key. If the desired key is not listed, create a new 
+  > Choose an available key. If the desired key is not listed, create a new
     key.
 
 Modules can retrieve configuration for all keys, configuration for a specific
@@ -148,3 +140,34 @@ key or the value of a specific key:
 ### Get a specific key value
 
 `key_get_key_value($key_id)`
+
+## Issues
+---------------
+
+Bugs and feature requests should be reported in [the Issue Queue](https://github.com/backdrop-contrib/read_time/issues).
+
+## Differences from Drupal 7
+-------------------------
+
+Capabilities should be the same.
+
+## Current Maintainers
+-------------------
+
+<!-- - [Justin Keiser](https://github.com/keiserjb). -->
+
+<!-- You may also wish to add: -->
+- Seeking additional maintainers.
+
+## Credits <!-- This section is required. -->
+-------
+
+- Ported to Backdrop CMS by [Justin Keiser](https://github.com/keiserjb).
+- Thank you to the maintainers of the [Drupal Module](https://www.drupal.org/project/key).
+
+
+License
+-------
+
+This project is GPL v2 software.
+See the LICENSE.txt file in this directory for complete text.
