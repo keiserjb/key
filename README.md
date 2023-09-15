@@ -142,17 +142,14 @@ key or the value of a specific key:
 `key_get_key_value($key_id)`
 
 ## Issues
----------------
 
 Bugs and feature requests should be reported in [the Issue Queue](https://github.com/backdrop-contrib/read_time/issues).
 
 ## Differences from Drupal 7
--------------------------
 
 Capabilities should be the same.
 
 ## Current Maintainers
--------------------
 
 <!-- - [Justin Keiser](https://github.com/keiserjb). -->
 
@@ -160,7 +157,6 @@ Capabilities should be the same.
 - Seeking additional maintainers.
 
 ## Credits <!-- This section is required. -->
--------
 
 - Ported to Backdrop CMS by [Justin Keiser](https://github.com/keiserjb).
 - Thank you to the maintainers of the [Drupal Module](https://www.drupal.org/project/key).
